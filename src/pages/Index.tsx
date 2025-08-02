@@ -169,9 +169,6 @@ const Index = () => {
                     <ArrowRight className="h-5 w-5 ml-2" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg">
-                  Watch Demo
-                </Button>
               </div>
 
               <div className="flex items-center space-x-6 text-sm text-muted-foreground">
@@ -241,12 +238,11 @@ const Index = () => {
               Join thousands of professionals who have already elevated their careers with our AI-powered platform.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg" className="text-lg">
-                Start Your Journey
-                <ArrowRight className="h-5 w-5 ml-2" />
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg">
-                Learn More
+              <Button variant="hero" size="lg" className="text-lg" asChild>
+                <Link to="/auth">
+                  Start Your Journey
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </Link>
               </Button>
             </div>
           </div>

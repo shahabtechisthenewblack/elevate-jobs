@@ -33,19 +33,19 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Company</h3>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <a href="/about" className="block hover:text-primary transition-colors">About</a>
-              <a href="/pricing" className="block hover:text-primary transition-colors">Pricing</a>
-              <a href="/contact" className="block hover:text-primary transition-colors">Contact</a>
+              <Link to="/about" className="block hover:text-primary transition-colors">About</Link>
+              <Link to="/pricing" className="block hover:text-primary transition-colors">Pricing</Link>
+              <Link to="/contact" className="block hover:text-primary transition-colors">Contact</Link>
             </div>
           </div>
 
           <div>
             <h3 className="font-semibold mb-4">Support</h3>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <a href="/help" className="block hover:text-primary transition-colors">Help Center</a>
-              <a href="/privacy" className="block hover:text-primary transition-colors">Privacy Policy</a>
-              <a href="/terms" className="block hover:text-primary transition-colors">Terms of Service</a>
-              <a href="/contact" className="block hover:text-primary transition-colors">Contact Support</a>
+              <Link to="/help" className="block hover:text-primary transition-colors">Help Center</Link>
+              <Link to="/privacy" className="block hover:text-primary transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="block hover:text-primary transition-colors">Terms of Service</Link>
+              <Link to="/contact" className="block hover:text-primary transition-colors">Contact Support</Link>
             </div>
           </div>
         </div>

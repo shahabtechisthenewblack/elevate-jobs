@@ -31,83 +31,98 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const tools = [
+  // Working tools first (those with "Try Now" enabled)
   {
     title: 'Resume Builder',
     description: 'Create ATS-optimized resumes with AI assistance',
     icon: FileText,
-    href: '/resume-builder'
+    href: '/resume-builder',
+    featured: true
   },
   {
     title: 'Cover Letter Generator',
     description: 'Generate personalized cover letters instantly',
     icon: MessageSquare,
-    href: '/cover-letter'
+    href: '/cover-letter',
+    featured: true
   },
   {
     title: 'Interview Preparation',
     description: 'Practice with AI-powered mock interviews',
     icon: UserCheck,
-    href: '/interview-prep'
-  },
-  {
-    title: 'Job Search Optimizer',
-    description: 'Find and track the perfect job opportunities',
-    icon: Target,
-    href: '/job-search'
-  },
-  {
-    title: 'Salary Negotiator',
-    description: 'Get insights and strategies for salary negotiations',
-    icon: DollarSign,
-    href: '/salary-negotiator'
+    href: '/interview-prep',
+    featured: true
   },
   {
     title: 'LinkedIn Optimizer',
     description: 'Optimize your LinkedIn profile for maximum visibility',
     icon: Linkedin,
-    href: '/linkedin-optimizer'
-  },
-  {
-    title: 'Career Path Analyzer',
-    description: 'Discover your ideal career trajectory',
-    icon: TrendingUp,
-    href: '/career-path'
-  },
-  {
-    title: 'Skills Assessment',
-    description: 'Evaluate and improve your professional skills',
-    icon: Award,
-    href: '/skills-assessment'
-  },
-  {
-    title: 'Portfolio Builder',
-    description: 'Create stunning professional portfolios',
-    icon: Briefcase,
-    href: '/portfolio-builder'
-  },
-  {
-    title: 'Networking Assistant',
-    description: 'Build meaningful professional connections',
-    icon: Users,
-    href: '/networking'
+    href: '/linkedin-optimizer',
+    featured: true
   },
   {
     title: 'Recruiter Outreach Script Generator',
     description: 'Generate personalized outreach messages for recruiters',
     icon: Users2,
-    href: '/recruiter'
+    href: '/recruiter',
+    featured: true
   },
   {
     title: 'Promotion Planner',
     description: 'Strategic planning for career advancement and promotions',
     icon: TrendingUp,
-    href: '/promotion-planner'
+    href: '/promotion-planner',
+    featured: true
   },
   {
     title: 'Layoff Tracker',
     description: 'Real-time layoff tracking and job security insights',
     icon: TrendingDown,
-    href: '/layoff-tracker'
+    href: '/layoff-tracker',
+    featured: true
+  },
+  // Other tools
+  {
+    title: 'Job Search Optimizer',
+    description: 'Find and track the perfect job opportunities',
+    icon: Target,
+    href: '/job-search',
+    comingSoon: true
+  },
+  {
+    title: 'Salary Negotiator',
+    description: 'Get insights and strategies for salary negotiations',
+    icon: DollarSign,
+    href: '/salary-negotiator',
+    comingSoon: true
+  },
+  {
+    title: 'Career Path Analyzer',
+    description: 'Discover your ideal career trajectory',
+    icon: TrendingUp,
+    href: '/career-path',
+    comingSoon: true
+  },
+  {
+    title: 'Skills Assessment',
+    description: 'Evaluate and improve your professional skills',
+    icon: Award,
+    href: '/skills-assessment',
+    comingSoon: true
+  },
+  {
+    title: 'Portfolio Builder',
+    description: 'Create stunning professional portfolios',
+    icon: Briefcase,
+    href: '/portfolio-builder',
+    comingSoon: true
+  },
+  {
+    title: 'Networking Assistant',
+    description: 'Build meaningful professional connections',
+    icon: Users,
+    href: '/networking',
+    comingSoon: true
   }
 ];
 
@@ -173,15 +188,15 @@ const Navigation = () => {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <a href="/pricing" className="text-base font-medium text-foreground hover:text-primary transition-colors">
+          <Link to="/pricing" className="text-base font-medium text-foreground hover:text-primary transition-colors">
             Pricing
-          </a>
-          <a href="/about" className="text-base font-medium text-foreground hover:text-primary transition-colors">
+          </Link>
+          <Link to="/about" className="text-base font-medium text-foreground hover:text-primary transition-colors">
             About
-          </a>
-          <a href="/contact" className="text-base font-medium text-foreground hover:text-primary transition-colors">
+          </Link>
+          <Link to="/contact" className="text-base font-medium text-foreground hover:text-primary transition-colors">
             Contact
-          </a>
+          </Link>
         </div>
 
         {/* CTA Buttons */}
@@ -253,15 +268,15 @@ const Navigation = () => {
               </div>
 
               <div className="flex flex-col space-y-2 pt-4 border-t">
-                <a href="/pricing" className="text-base font-medium p-2 hover:bg-accent rounded-lg transition-colors">
+                <Link to="/pricing" className="text-base font-medium p-2 hover:bg-accent rounded-lg transition-colors">
                   Pricing
-                </a>
-                <a href="/about" className="text-base font-medium p-2 hover:bg-accent rounded-lg transition-colors">
+                </Link>
+                <Link to="/about" className="text-base font-medium p-2 hover:bg-accent rounded-lg transition-colors">
                   About
-                </a>
-                <a href="/contact" className="text-base font-medium p-2 hover:bg-accent rounded-lg transition-colors">
+                </Link>
+                <Link to="/contact" className="text-base font-medium p-2 hover:bg-accent rounded-lg transition-colors">
                   Contact
-                </a>
+                </Link>
               </div>
 
               <div className="flex flex-col space-y-2 pt-4">
