@@ -36,7 +36,6 @@ const Footer = () => {
               <a href="/about" className="block hover:text-primary transition-colors">About</a>
               <a href="/pricing" className="block hover:text-primary transition-colors">Pricing</a>
               <a href="/contact" className="block hover:text-primary transition-colors">Contact</a>
-              <a href="/careers" className="block hover:text-primary transition-colors">Careers</a>
             </div>
           </div>
 
