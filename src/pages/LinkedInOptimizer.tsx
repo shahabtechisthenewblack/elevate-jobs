@@ -106,7 +106,7 @@ export default function LinkedInOptimizer() {
             keywords: aiResult.analysis.strategicKeywords,
             improvementScore: aiResult.analysis.profileScore
           };
-          setOptimizationAnalysis(optimizedProfile);
+          setOptimizedProfile(optimizedProfile);
         } else {
           throw new Error(aiResult.error || 'AI analysis failed');
         }
@@ -260,7 +260,7 @@ export default function LinkedInOptimizer() {
             keywords: aiResult.analysis.strategicKeywords,
             improvementScore: aiResult.analysis.profileScore
           };
-          setOptimizationAnalysis(optimizedProfile);
+          setOptimizedProfile(optimizedProfile);
         } else {
           throw new Error(aiResult.error || 'AI analysis failed');
         }
