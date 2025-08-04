@@ -239,7 +239,7 @@ export default function LinkedInOptimizer() {
     setIsLoading(true);
     try {
       // Send manual data to ChatGPT for analysis
-      const aiAnalysisResponse = await fetch('https://e822798c-6f4f-475d-a7b5-b516f3ac5793.supabase.co/functions/v1/linkedin-profile-analyzer', {
+      const aiAnalysisResponse = await fetch('https://jfwsgzwgffxxkaerxuqb.supabase.co/functions/v1/linkedin-profile-analyzer', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -16,11 +16,12 @@ import {
   CheckCircle,
   Star
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import ToolCard from '@/components/ToolCard';
 import heroImage from '@/assets/hero-image.jpg';
+import { useAuth } from '@/hooks/useAuth';
 
 const tools = [
   // Ready tools first
@@ -128,6 +129,21 @@ const features = [
 ];
 
 const Index = () => {
+  const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    if (isAuthenticated) {
+      // Scroll to tools section
+      const toolsSection = document.getElementById('tools-section');
+      if (toolsSection) {
+        toolsSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/auth');
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-subtle">
       
@@ -163,11 +179,9 @@ const Index = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="hero" size="lg" className="text-lg" asChild>
-                  <Link to="/auth">
-                    Get Started Free
-                    <ArrowRight className="h-5 w-5 ml-2" />
-                  </Link>
+                <Button variant="hero" size="lg" className="text-lg" onClick={handleGetStarted}>
+                  {isAuthenticated ? 'View AI Tools' : 'Get Started Free'}
+                  <ArrowRight className="h-5 w-5 ml-2" />
                 </Button>
               </div>
 
@@ -197,7 +211,7 @@ const Index = () => {
       </section>
 
       {/* Tools Section */}
-      <section className="py-20">
+      <section id="tools-section" className="py-20">
         <div className="container">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-4xl font-bold">
@@ -238,11 +252,9 @@ const Index = () => {
               Join thousands of professionals who have already elevated their careers with our AI-powered platform.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="lg" className="text-lg" asChild>
-                <Link to="/auth">
-                  Start Your Journey
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Link>
+              <Button variant="hero" size="lg" className="text-lg" onClick={handleGetStarted}>
+                {isAuthenticated ? 'Explore AI Tools' : 'Start Your Journey'}
+                <ArrowRight className="h-5 w-5 ml-2" />
               </Button>
             </div>
           </div>
