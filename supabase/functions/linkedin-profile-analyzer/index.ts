@@ -15,6 +15,17 @@ serve(async (req) => {
   }
 
   try {
+    console.log('LinkedIn Profile Analyzer function called');
+    
+    // Check if OpenAI API key is available
+    if (!openAIApiKey) {
+      console.error('OpenAI API key not found');
+      return new Response(
+        JSON.stringify({ success: false, error: 'OpenAI API key not configured' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
     const { linkedinUrl, manualData } = await req.json();
 
     if (!linkedinUrl && !manualData) {
@@ -76,6 +87,8 @@ Please provide a comprehensive analysis and return a JSON response with the foll
 Focus on making the profile more attractive to recruiters and hiring managers for the target role. Use industry-specific keywords and quantify achievements where possible.`;
     }
 
+    console.log('Making request to OpenAI API...');
+    
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
@@ -92,8 +105,11 @@ Focus on making the profile more attractive to recruiters and hiring managers fo
         max_tokens: 2000,
       }),
     });
-
+    
     if (!response.ok) {
+      console.error(`OpenAI API error: ${response.status} ${response.statusText}`);
+      const errorText = await response.text();
+      console.error('Error response:', errorText);
       throw new Error(`OpenAI API error: ${response.status} ${response.statusText}`);
     }
 
